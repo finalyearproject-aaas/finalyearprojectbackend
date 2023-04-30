@@ -10,9 +10,31 @@ function InputBox() {
     const reader = new FileReader();
     reader.onloadend = () => {
       setImage(reader.result);
-    }
+      
+      // Send the image to the backend
+      fetch('http://localhost:5000/upload', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ image })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        // Handle the response from the backend
+      })
+      .catch(error => {
+        // Handle errors
+      });
+
+      console.log("sent request")
+    };
+  
     reader.readAsDataURL(selectedImage);
-  }
+    }
+    
+  
 
   return (
     <div>
