@@ -57,24 +57,14 @@ function InputBox() {
   
 
   return (
-    <div>
+    <div className="viewport">
       <div className="header" >NETRA</div>
       <h2 className="head">Insert fundus image to check for Diabetic Retinopathy</h2>
       <input type="file" accept="image/*" onChange={handleImageChange} />
-      {/* {image && (
-      {(  <div>
-            <div>
-            <img src={image} alt="Uploaded" width="300" />
-            </div>
-            <div>
-                <OutputBox prediction={pred}/>
-            </div>
-        </div>
-      )} */}
 
-    <div>
+    <div className="row">
       {/* <Loading /> */}
-      {image && <img src={image} alt="Uploaded" width="300" />}
+      {image && <img className='image' src={image} alt="Uploaded" width="300" />}
       {pred!="a" && <h2>Result: </h2>}
       {/* {pred!="a" && <p>{Number(pred)}</p>} */}
       {pred!="a" && <p className='result' >{getResult(pred)}</p>}
