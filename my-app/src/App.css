@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  background-color: #203661;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+.header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.result{
+  color: rgb(184, 35, 35);
+  font-weight: 500;
+}

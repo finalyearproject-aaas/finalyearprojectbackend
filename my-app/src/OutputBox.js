@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Loading from './Loading';
 
-function OutputBox() {
-  const [output, setOutput] = useState('whatever stage');
+function OutputBox(props) {
+  const [output, setOutput] = useState("Stage");
 
   const handleInputChange = (event) => {
     const value = event.target.value;
     setOutput(value);
   }
+  useEffect(() => {
+    console.log("useeffect triggered")
+    setOutput(props.prediction);
+  }, [props.prediction]);
 
   return (
     <div>
